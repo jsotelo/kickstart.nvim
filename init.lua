@@ -250,6 +250,11 @@ require('lazy').setup({
     opts = {
       -- See Configuration section for options
     },
+    keys = {
+      { '<leader>cc', ':CopilotChat<CR>', mode = 'n', desc = 'Chat with Copilot' },
+      { '<leader>ce', ':CopilotChatExplain<CR>', mode = 'v', desc = 'Explain with Copilot' },
+      { '<leader>cf', ':CopilotChatFix<CR>', mode = 'v', desc = 'Explain with Copilot' },
+    },
     -- See Commands section for default commands if you want to lazy load on them
   },
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
