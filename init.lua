@@ -1,4 +1,4 @@
---[[
+--[[main./go
 
 =====================================================================
 ==================== READ THIS BEFORE CONTINUING ====================
@@ -976,13 +976,21 @@ require('lazy').setup({
   {
     'rmagatti/auto-session',
     lazy = false,
+    cwd_change_handling = true,
 
     ---enables autocomplete for opts
     ---@module "auto-session"
     ---@type AutoSession.Config
     opts = {
       allowed_dirs = { '~/git/*', '~/git/jsotelo/*' },
+      suppressed_dirs = { '~/git' },
       -- log_level = 'debug',
+    },
+    keys = {
+      -- Will use Telescope if installed or a vim.ui.select picker otherwise
+      { '<leader>wr', '<cmd>SessionSearch<CR>', desc = 'Session search' },
+      { '<leader>ws', '<cmd>SessionSave<CR>', desc = 'Save session' },
+      { '<leader>wa', '<cmd>SessionToggleAutoSave<CR>', desc = 'Toggle autosave' },
     },
   },
 
